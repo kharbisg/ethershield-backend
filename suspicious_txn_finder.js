@@ -1,11 +1,11 @@
-const events = require("events");
-const { EventEmitter } = require("stream");
+const events = require('events');
+const { EventEmitter } = require('stream');
 
 class SuspiciousTxnFinder extends EventEmitter {
   constructor(txn_sniffer, rulecfg) {
     super();
     this.match_txn = this.match_txn.bind(this);
-    txn_sniffer.on("tx", this.match_txn);
+    txn_sniffer.on('tx', this.match_txn);
     this.count = 0;
   }
 
@@ -13,7 +13,7 @@ class SuspiciousTxnFinder extends EventEmitter {
     this.count += 1;
     if (this.count % 100 == 0) {
       //console.log(txn);
-      this.emit("suspicious_txn", txn);
+      this.emit('suspicious_txn', txn);
     }
   }
 }

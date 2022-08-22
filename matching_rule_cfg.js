@@ -1,7 +1,7 @@
 class MatchingRulesConfig {
   constructor(rule_updater) {
     this.list_of_wallets = [];
-    rule_updater.on("new_wallet_address", this.handle_new_wallet);
+    rule_updater.on('new_wallet_address', this.handle_new_wallet);
   }
 
   list_of_source_wallets() {

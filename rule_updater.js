@@ -1,5 +1,5 @@
-const events = require("events");
-const { EventEmitter } = require("stream");
+const events = require('events');
+const { EventEmitter } = require('stream');
 
 class RuleUpdater extends EventEmitter {
   constructor() {
@@ -7,7 +7,7 @@ class RuleUpdater extends EventEmitter {
   }
 
   add_new_address(wallet_address) {
-    this.emit("new_wallet_address", wallet_address);
+    this.emit('new_wallet_address', wallet_address);
   }
 }
 

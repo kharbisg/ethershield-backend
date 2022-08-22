@@ -1,6 +1,6 @@
-const Web3 = require("web3");
-const events = require("events");
-const { EventEmitter } = require("stream");
+const Web3 = require('web3');
+const events = require('events');
+const { EventEmitter } = require('stream');
 
 class TXPoolSniffer extends EventEmitter {
   constructor(app_config) {
@@ -12,17 +12,17 @@ class TXPoolSniffer extends EventEmitter {
 
   subscribe() {
     this.subscription = this.web3.eth.subscribe(
-      "pendingTransactions",
+      'pendingTransactions',
       (err, res) => {
         if (err) console.error(err);
       }
     );
 
-    this.subscription.on("data", (txHash) => {
+    this.subscription.on('data', (txHash) => {
       setTimeout(async () => {
         try {
           let tx = await this.web3.eth.getTransaction(txHash);
-          this.emit("tx", tx);
+          this.emit('tx', tx);
           //console.log(tx);
         } catch (err) {
           console.error(err);

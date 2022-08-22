@@ -1,8 +1,8 @@
-const fs = require("fs");
+const fs = require('fs');
 
 const myOwnAsync = () => {
   //console.log("mysycn");
-  return "myasync";
+  return 'myasync';
 };
 
 const getList = async () => {
@@ -11,9 +11,9 @@ const getList = async () => {
     //   "/Users/paraskharbanda/ethershield/package-lock.json",
     //   () => {}
     // );
-    console.log("before await");
+    console.log('before await');
     const data = await myOwnAsync();
-    console.log("called inside async function");
+    console.log('called inside async function');
     console.log(data);
   } catch (err) {
     console.log(err);

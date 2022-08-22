@@ -1,7 +1,7 @@
 class AppConfig {
   constructor() {
     this.url =
-      "wss://summer-spring-lake.quiknode.pro/b8492ef1b59862177343d0efb4b0be83ac49de96/";
+      'wss://summer-spring-lake.quiknode.pro/b8492ef1b59862177343d0efb4b0be83ac49de96/';
 
     this.options = {
       timeout: 30000,
